@@ -5,19 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>Block_Breaker | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title:Block BreakerBlock Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+  <meta name="description" content="Block Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/08/26/Block Breaker/index.html">
+<meta property="og:title" content="Block_Breaker">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/Block-Breaker/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title:Block BreakerBlock Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+<meta property="og:description" content="Block Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-27T19:30:06.423Z">
+<meta property="og:updated_time" content="2019-08-27T19:38:16.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title:Block BreakerBlock Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+<meta name="twitter:title" content="Block_Breaker">
+<meta name="twitter:description" content="Block Breaker模拟： 1.注意砖块掉落的条件 2.注意砖掉落的影响 3.队列处理(bfs) 数据量比较大，关闭ios同步: 1ios::sync_with_stdio(false);  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -64,20 +64,29 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Block Breaker" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Block-Breaker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/26/Block Breaker/" class="article-date">
-  <time datetime="2019-08-25T16:09:57.430Z" itemprop="datePublished">2019-08-26</time>
+    <a href="/2019/08/28/Block-Breaker/" class="article-date">
+  <time datetime="2019-08-27T19:37:26.000Z" itemprop="datePublished">2019-08-28</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Block_Breaker
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-Block-Breaker"><a href="#title-Block-Breaker" class="headerlink" title="title:Block Breaker"></a>title:Block Breaker</h2><h4 id="Block-Breaker"><a href="#Block-Breaker" class="headerlink" title="Block Breaker"></a>Block Breaker</h4><p>模拟：</p>
+        <h4 id="Block-Breaker"><a href="#Block-Breaker" class="headerlink" title="Block Breaker"></a>Block Breaker</h4><p>模拟：</p>
 <p>1.注意砖块掉落的条件</p>
 <p>2.注意砖掉落的影响</p>
 <p>3.队列处理(bfs)</p>
@@ -85,12 +94,10 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 一块砖掉落的条件：砖的左右其中至少有一块掉了，并且砖的上下至少有一块掉了</span></span><br><span class="line"><span class="comment"> * 一块砖掉了的影响：应该检测上下左右是否仍然存在，如果有掉落的砖，应该继续这个操作</span></span><br><span class="line"><span class="comment"> * 边界标记：边界的外面是当作有敲不掉的砖的</span></span><br><span class="line"><span class="comment"> * 考虑用队列来处理</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> breaks[MAXN+<span class="number">2</span>][MAXN+<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_frame</span><span class="params">(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pos)</span><span class="comment">//是不是边上的那个砖块</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (pos.first==<span class="number">0</span>||pos.second==<span class="number">0</span>||pos.first==n+<span class="number">1</span>||pos.second==m+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_fall</span><span class="params">(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(is_frame(pos)) <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//边缘的砖块不掉落</span></span><br><span class="line">    <span class="keyword">if</span>(!breaks[pos.first][pos.second]) <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//已经掉下去的砖不能再掉下去一次</span></span><br><span class="line">    <span class="keyword">if</span>((breaks[pos.first+<span class="number">1</span>][pos.second]&amp;&amp;breaks[pos.first<span class="number">-1</span>][pos.second])||(breaks[pos.first][pos.second+<span class="number">1</span>]&amp;&amp;breaks[pos.first][pos.second<span class="number">-1</span>])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(breaks,<span class="literal">true</span>,<span class="keyword">sizeof</span>(breaks));</span><br><span class="line">        <span class="keyword">int</span> q;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;q;</span><br><span class="line">        <span class="keyword">while</span>(q--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x,y;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">            <span class="keyword">if</span>(!breaks[x][y]) &#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"0"</span>&lt;&lt;<span class="built_in">endl</span>; <span class="keyword">continue</span>;&#125;</span><br><span class="line">            <span class="keyword">int</span> fall_breaks=<span class="number">1</span>;</span><br><span class="line">            <span class="built_in">queue</span>&lt; pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; check_queue;</span><br><span class="line">            check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(x+<span class="number">1</span>,y));</span><br><span class="line">            check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(x<span class="number">-1</span>,y));</span><br><span class="line">            check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(x,y+<span class="number">1</span>));</span><br><span class="line">            check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(x,y<span class="number">-1</span>));</span><br><span class="line">            breaks[x][y]=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">while</span>(!check_queue.empty())</span><br><span class="line">            &#123;</span><br><span class="line">                pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pos=check_queue.front(); check_queue.pop();</span><br><span class="line">                <span class="keyword">if</span>(is_fall(pos))</span><br><span class="line">                &#123;</span><br><span class="line">                    check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(pos.first+<span class="number">1</span>,pos.second));</span><br><span class="line">                    check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(pos.first<span class="number">-1</span>,pos.second));</span><br><span class="line">                    check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(pos.first,pos.second+<span class="number">1</span>));</span><br><span class="line">                    check_queue.push(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(pos.first,pos.second<span class="number">-1</span>));</span><br><span class="line">                    fall_breaks++;</span><br><span class="line">                    breaks[pos.first][pos.second]=<span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;&lt;&lt;fall_breaks&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/Block Breaker/" data-id="cjzu872ho0000egued47ataj4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/28/Block-Breaker/" data-id="cjzu8h8aj0000kwuefc7fxfom" class="article-share-link">Share</a>
       
       
     </footer>
@@ -99,15 +106,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
+    <a href="/2019/08/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
 </nav>
 
@@ -143,11 +146,11 @@
       <ul>
         
           <li>
-            <a href="/2019/08/28/hello-world/">Hello World</a>
+            <a href="/2019/08/28/Block-Breaker/">Block_Breaker</a>
           </li>
         
           <li>
-            <a href="/2019/08/26/Block Breaker/">(no title)</a>
+            <a href="/2019/08/28/hello-world/">Hello World</a>
           </li>
         
       </ul>
