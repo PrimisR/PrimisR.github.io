@@ -5,15 +5,20 @@
   
 
   
-  <title>Tag: hdu_multiuniversity_contest | Secret_Base</title>
+  <title>binary_search | Secret_Base</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Secret_Base">
-<meta property="og:url" content="http://yoursite.com/tags/hdu-multiuniversity-contest/index.html">
+  <meta name="description" content="binary_search二分查找对于一些有序的数据，如果计算出中间值符合某项条件后，就可以排除或者不必计算中间值左边或右边一半的数据，这时候可以使用二分查找。 二分查找模板1234567891011int binarySearch()&amp;#123;    int low=1,high=n,mid;    while(low&amp;lt;=high)    &amp;#123;        mid=low+(h">
+<meta name="keywords" content="binary_search">
+<meta property="og:type" content="article">
+<meta property="og:title" content="binary_search">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/binary-search/index.html">
 <meta property="og:site_name" content="Secret_Base">
+<meta property="og:description" content="binary_search二分查找对于一些有序的数据，如果计算出中间值符合某项条件后，就可以排除或者不必计算中间值左边或右边一半的数据，这时候可以使用二分查找。 二分查找模板1234567891011int binarySearch()&amp;#123;    int low=1,high=n,mid;    while(low&amp;lt;=high)    &amp;#123;        mid=low+(h">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-08T07:12:22.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Secret_Base">
+<meta name="twitter:title" content="binary_search">
+<meta name="twitter:description" content="binary_search二分查找对于一些有序的数据，如果计算出中间值符合某项条件后，就可以排除或者不必计算中间值左边或右边一半的数据，这时候可以使用二分查找。 二分查找模板1234567891011int binarySearch()&amp;#123;    int low=1,high=n,mid;    while(low&amp;lt;=high)    &amp;#123;        mid=low+(h">
   
     <link rel="alternate" href="/atom.xml" title="Secret_Base" type="application/atom+xml">
   
@@ -60,40 +65,58 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/28/Block-Breaker/" class="archive-article-date">
-  <time datetime="2019-08-27T19:37:26.000Z" itemprop="datePublished">Aug 28</time>
+        <section id="main"><article id="post-binary-search" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/08/binary-search/" class="article-date">
+  <time datetime="2019-09-08T07:07:22.000Z" itemprop="datePublished">2019-09-08</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/Block-Breaker/">Block_Breaker</a>
+    <h1 class="article-title" itemprop="name">
+      binary_search
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="binary-search"><a href="#binary-search" class="headerlink" title="binary_search"></a>binary_search</h4><h5 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h5><p>对于一些有序的数据，如果计算出中间值符合某项条件后，就可以排除或者不必计算中间值左边或右边一半的数据，这时候可以使用二分查找。</p>
+<h5 id="二分查找模板"><a href="#二分查找模板" class="headerlink" title="二分查找模板"></a>二分查找模板</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low=<span class="number">1</span>,high=n,mid;</span><br><span class="line">    <span class="keyword">while</span>(low&lt;=high)</span><br><span class="line">    &#123;</span><br><span class="line">        mid=low+(high-low)/<span class="number">2</span>;<span class="comment">//防止溢出，也可以用于迭代器和指针判断</span></span><br><span class="line">        <span class="keyword">if</span>(is_valid(mid)) high=mid<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">else</span> low=mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>is_valid(mid)​是判定条件，如果对于当前的比较无法判断出答案是否是mid，应当用ans​记录​mid，如果可以比较则直接返回。</p>
+<p>使用时应当根据实际情况进行修改，二分是一种查找思想。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/08/binary-search/" data-id="ck0an0hkl0003tkuen991mvix" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/binary-search/">binary_search</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/08/toy-storage/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">toy_storage</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
